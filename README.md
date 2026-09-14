@@ -2,15 +2,15 @@
 
 Weight loss tracking.
 
-Shrink! is made up of four components, each currently a skeleton with
-no tech stack chosen yet:
+Shrink! is made up of three components. The stack is chosen (see
+[docs/tdr/002](docs/tdr/002_tech_stack_design.md)) but not yet
+initialized:
 
-| Component | Path | Description |
-|-----------|------|-------------|
-| Backend | [`backend/`](backend/) | API and business logic |
-| Web | [`web/`](web/) | Web frontend |
-| Android | [`android/`](android/) | Android app |
-| iOS | [`ios/`](ios/) | iOS app |
+| Component | Path | Stack | Description |
+|-----------|------|-------|-------------|
+| Client | [`client/`](client/) | Flutter | Mobile (iOS/Android) + web app |
+| Backend | [`backend/`](backend/) | Go + huma, PostgreSQL | API and business logic |
+| Marketing | [`marketing/`](marketing/) | Astro | Public marketing/landing site |
 
 ## Docs
 
