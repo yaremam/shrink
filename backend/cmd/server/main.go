@@ -1,3 +1,4 @@
+// Command server runs the Shrink! backend API.
 package main
 
 import (
