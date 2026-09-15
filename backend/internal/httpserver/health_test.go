@@ -17,7 +17,9 @@ func TestHealth(t *testing.T) {
 
 	resp, err := http.Get(srv.URL + "/health")
 	require.NoError(t, err)
-	defer resp.Body.Close()
+	defer func() {
+		require.NoError(t, resp.Body.Close())
+	}()
 
 	require.Equal(t, http.StatusOK, resp.StatusCode)
 

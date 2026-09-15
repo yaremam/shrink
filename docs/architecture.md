@@ -16,6 +16,9 @@ No monorepo tooling links these — they're three independent projects
 communicating over REST (client ↔ backend) or not at all (marketing
 is a standalone static site).
 
+Coding conventions are tracked in [`CODING_STANDARDS.md`](../CODING_STANDARDS.md),
+added per-language as each component initializes.
+
 ## Data flow
 
 Not yet implemented. Planned shape: the Flutter client talks to the
@@ -45,5 +48,6 @@ Structural decisions are recorded individually in [`docs/tdr/`](tdr/):
 - [001 — Repo skeleton](tdr/001_repo_skeleton_design.md)
 - [002 — Tech stack selection](tdr/002_tech_stack_design.md)
 - [003 — Backend initialization](tdr/003_backend_init_design.md)
+- [004 — Coding standards (Go)](tdr/004_coding_standards_design.md)
 
 This document reflects only the current, settled state.

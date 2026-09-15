@@ -1,3 +1,4 @@
+// Package httpserver builds the Shrink! backend's HTTP handler tree.
 package httpserver
 
 import (
