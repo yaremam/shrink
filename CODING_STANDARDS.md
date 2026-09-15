@@ -35,3 +35,29 @@ Not enforceable by tooling, so covered here instead:
   than writing to `http.ResponseWriter` directly — keeps the OpenAPI
   spec accurate without separate annotation, per
   [`docs/tdr/002_tech_stack_design.md`](docs/tdr/002_tech_stack_design.md).
+
+## Dart (`client/`)
+
+Enforced by `client/analysis_options.yaml` (`package:flutter_lints/flutter.yaml`,
+Flutter's own recommended lint set). Run `flutter analyze` from
+`client/` before committing.
+
+Not enforceable by tooling, so covered here instead:
+
+- **Widget structure**: prefer `StatelessWidget`; reach for
+  `StatefulWidget` only when the widget genuinely owns local mutable
+  state. Keep `build()` focused on layout — pull non-trivial logic out
+  into plain methods or separate classes rather than growing `build()`
+  itself.
+- **Doc comments**: public API (exported classes, widgets, methods)
+  gets a `///` dartdoc comment explaining what it's for, not just
+  restating its name.
+- **Naming**: `UpperCamelCase` for types/widgets, `lowerCamelCase` for
+  members/locals — mostly enforced already by `flutter_lints`, noted
+  here for completeness.
+- **Testing**: `flutter_test` — `tester.pumpWidget(...)` +
+  `find`/`expect`, matching the pattern established in
+  [`docs/tdr/005_client_init_design.md`](docs/tdr/005_client_init_design.md).
+  Note: `flutter_tester` can segfault intermittently in some sandboxed
+  dev environments (not a code issue) — re-run before assuming a real
+  failure; see 005's design doc.
