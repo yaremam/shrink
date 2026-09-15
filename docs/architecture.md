@@ -8,7 +8,7 @@ an earlier architectural decision.
 
 | Component | Path         | Stack | Status |
 |-----------|--------------|-------|--------|
-| Client    | `client/`    | Flutter (mobile + web), Firebase Auth | Skeleton — stack chosen, not yet initialized |
+| Client    | `client/`    | Flutter (mobile + web), Firebase Auth | Initialized — placeholder screen implemented and tested; no auth/real screens yet |
 | Backend   | `backend/`   | Go + [huma](https://huma.rocks/), PostgreSQL | Initialized — `GET /health` implemented and tested; no DB/auth/containerization yet |
 | Marketing | `marketing/` | Astro (static site) | Skeleton — stack chosen, not yet initialized |
 
@@ -29,10 +29,12 @@ not yet designed.
 
 Not designed yet, but implied by decisions made so far, each to get
 its own backlog/TDR pair when it starts:
-- Initializing the Flutter client and Astro marketing projects
-  (backend done, see 003)
+- Initializing the Astro marketing project (backend done, see 003;
+  client done, see 005)
 - PostgreSQL connectivity + migrations, Firebase ID token
   verification, and Docker/CI packaging for the backend
+- Firebase Auth integration and the first real product screen
+  (with a mockup) for the client
 - Entitlements/feature-gating for general vs. premium tiers, and
   billing (Stripe web, App Store/Play Store IAP mobile)
 - Vertex AI integration for future AI features
@@ -45,5 +47,6 @@ Structural decisions are recorded individually in [`docs/tdr/`](tdr/):
 - [001 — Repo skeleton](tdr/001_repo_skeleton_design.md)
 - [002 — Tech stack selection](tdr/002_tech_stack_design.md)
 - [003 — Backend initialization](tdr/003_backend_init_design.md)
+- [005 — Client initialization](tdr/005_client_init_design.md)
 
 This document reflects only the current, settled state.
